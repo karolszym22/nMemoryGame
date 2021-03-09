@@ -1,0 +1,198 @@
+
+*{
+    margin: 0;
+    padding: 0;
+
+ }
+
+
+
+ body
+ {
+     margin: 2%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+ .main-wrapper
+ {
+     width: 800px;
+     height: 600px;
+     border: 3px solid black;
+     border-radius: 15px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+     background-color: rgb(98, 127, 214);
+     color: white;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     
+    
+ }
+  .board-game
+  {
+      width: 85%;
+      height: 90%;
+      border: 3px solid rgb(255, 255, 255);
+      border-radius: 5px;
+      background-color: royalblue;
+      display: flex;
+      box-sizing: border-box;
+      padding: 0 20px;
+      align-items: center;
+      justify-content: center;
+  }
+   .dificulity-level
+   {
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    display: none;
+   }
+   .dificulity-level h1
+   {
+       font-size: 56px;
+       font-family: 'Potta One', cursive;
+   }
+   .chose-dificulity
+   {
+       display: flex;
+       justify-content: space-around;
+       width: 100%;
+       height: 40%;
+      
+       align-items: center;
+       
+   }
+   .dificulity
+   {
+    font-size: 34px;
+
+       
+   }
+   .dificulity p
+   {
+       padding: 10px 20px;
+       border: 2px solid white;
+       border-radius: 20px;
+       cursor: pointer;
+   }
+   .dificulity p:hover
+   {
+       background-color: rgb(109, 141, 238);
+   }
+
+   .game-start
+   {
+       width: 95%;
+       height: 95%;
+       display: flex;
+       align-items: center;
+
+   }
+    .cards-board
+    {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        
+    }
+   
+   
+    .card
+    {
+        height: 190px;
+        width: 140px;
+        border: 2px solid black;
+        margin: 10px;
+        background-color: white;
+        cursor: pointer;
+        background-image: url("profilowe.png");
+        background-size: 200px;
+        background-position: 50%;
+       
+    }
+                #card1{
+                    background-image: url("profilowe.png");
+                    background-size: 200px;
+                    background-position: 50%;
+                }
+                #card2{
+                    background-image: url("profilowe2.jpg");
+                    background-size: 200px;
+                    background-position: 50%;
+                }
+                #card3{
+                    background-image: url("profilowe3.png");
+                    background-size: 200px;
+                    background-position: 50%;
+                }
+                #card4{
+                    background-image: url("profilowe.png");
+                    background-size: 200px;
+                    background-position: 50%;
+                }
+                #card5{
+                    background-image: url("profilowe2.jpg");
+                    background-size: 200px;
+                    background-position: 50%;
+                }
+                #card6{
+                    background-image: url("profilowe3.png");
+                    background-size: 200px;
+                    background-position: 50%;
+                    
+                }
+   
+
+     .shadow-card
+     {
+         height: 100%;
+         width: 100%;
+         background-color: rgb(85, 82, 82);
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border: 10px solid rgb(99, 36, 36);
+         box-sizing: border-box;
+     }
+       .shadow-card h1
+       {
+         font-size: 50px;
+       }
+
+
+
+       @keyframes rotate
+       {
+        100%{
+            transform: rotate3d(1,2,2, 180deg);
+            width: 0%;
+            height: 0%;
+          }
+
+       }
+    
+       @media (max-width: 714px) {
+        .card
+        {
+            height: 150px;
+            width: 110px;
+        }
+       }
+       @media (max-width: 425px) {
+        .card
+        {
+            height: 100px;
+            width: 70px;
+        }
+       }
+
+       
+       
+    
