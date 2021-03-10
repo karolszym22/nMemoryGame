@@ -1,15 +1,17 @@
 import {player} from "./score.js"
 import {pictures} from "./pictures.js"
 import {generatorPictures} from "./generatorPictures.js"
+import {settings} from "./settings.js"
 
 let movePermit = true;
 
 const newGame = new generatorPictures();
 const playerOne = new player(0, "Jan");
-
+const setting = new settings();
 
 newGame.generatorCards();
 newGame.addPictures();
+setting.handleModalSettings();
 class Memory
 
 {
@@ -61,6 +63,14 @@ class Memory
         this.firstClickedPic = "";
         this.lastClickedPic = "";
         
+     }
+
+     finishGame(numberHits)
+     {
+         if(numberHits == 3)
+         {
+             setting.show();
+         }
      }
 
 }
