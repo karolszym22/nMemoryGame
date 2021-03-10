@@ -26,7 +26,8 @@
      background-color: rgb(99, 35, 90);
      color: white;
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-     
+     font-family: 'Fredoka One', cursive;
+     margin-top: 50px;
     
  }
   .board-game
@@ -41,6 +42,7 @@
       padding: 0 20px;
       align-items: center;
       justify-content: center;
+     
       
   }
    .dificulity-level
@@ -109,6 +111,7 @@
         justify-content: space-around;
         box-sizing: border-box;
         height: 90px;
+        align-items: center;
     }
     .reset-option
     {
@@ -128,17 +131,19 @@
         width: 100px;
         height: 60px;
         border-radius: 25px;
-        background: linear-gradient(to right, rgb(230, 151, 33) , rgb(233, 220, 37));
+        background: linear-gradient(to right, rgb(230, 151, 33) , rgb(202, 192, 50));
         border: 0;
         border-bottom: 5px solid rgba(156, 108, 53, 0.842);
         margin: 15px 0px;
         color: white;
-        font-size: 26px;
+        font-size: 22px;
+        font-family: 'Fredoka One', cursive;
+        display: none;
     }
     .reset-button:hover
     {
         height: 59px; 
-        font-size: 25px;
+        font-size: 21px;
     }
     .card
     {
@@ -187,7 +192,7 @@
      {
          height: 100%;
          width: 100%;
-         background-color: rgb(163, 80, 32);
+         background: linear-gradient(0.25turn, #83441b, #b96c1a);
          display: flex;
          justify-content: center;
          align-items: center;
