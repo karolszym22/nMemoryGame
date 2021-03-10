@@ -362,6 +362,7 @@
         width: 100%;
         justify-content: flex-end;
     }
+
     .close-modal a
     {
         margin-right: 10px;
@@ -399,6 +400,10 @@
     align-items: center;
 }
   .shadow-box.close
+    {
+        display: none;
+    }
+    .modal-rank.close
     {
         display: none;
     }

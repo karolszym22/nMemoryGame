@@ -2,7 +2,9 @@ export class settings{
     constructor()
     {
         this.closeModalBttn = document.getElementById('closeModal');
+        this.closeModaRanklBttn = document.getElementById('close-modal-rank');
         this.scoreTableBttn = document.getElementById('scoreButton');
+
         
     }
     
@@ -12,6 +14,11 @@ export class settings{
         this.closeModalBttn.addEventListener('click', function()
         {
            document.querySelector('.modal').classList.toggle("close");
+           document.querySelector('.shadow-box').classList.toggle("close");
+        })
+        this.closeModaRanklBttn.addEventListener('click', function()
+        {
+           document.querySelector('.modal-rank').classList.toggle("close");
            document.querySelector('.shadow-box').classList.toggle("close");
         })
     }
