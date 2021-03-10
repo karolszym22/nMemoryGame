@@ -3,8 +3,19 @@ import {pictures} from "./pictures.js"
 import {generatorPictures} from "./generatorPictures.js"
 import {settings} from "./settings.js"
 
-let movePermit = true;
 
+function timer() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('1');
+        console.log("34343");
+      }, 1000);
+    });
+  }
+
+
+
+let movePermit = true;
 const newGame = new generatorPictures();
 const playerOne = new player(0, "Jan");
 const setting = new settings();
@@ -23,6 +34,18 @@ class Memory
         this.numberOfHits = 0;
         this.pointsNumber = 9999999;
         this.timer = 0;
+    }
+
+    async timeCounter()
+    { let time = document.querySelector(".counter-time");
+       
+        do{
+            const result = await timer();
+            this.timer+=parseInt(result);
+            console.log(this.timer + "timer");
+            time.innerHTML = this.timer;
+        }while(this.numberOfHits!=3);
+        
     }
 
     clickedPicture(value)
@@ -67,20 +90,13 @@ class Memory
         
      }
 
-     timeCounter()
-     {
-        do
-        {
-            console.log(setInterval(this.timer++, 3000));
-        }while(this.numberHits!=3);
-    }
 
      finishGame(numberHits)
      {   let score = document.getElementById('results');
          if(numberHits == 3)
          {
              setting.showModal();
-             score.innerHTML = (this.pointsNumber/playerOne.trials);
+             score.innerHTML = (this.pointsNumber/(playerOne.trials*this.timer));
          }
      }
 
@@ -90,7 +106,7 @@ class Memory
 
 
 const game = new Memory();
-
+game.timeCounter();
 var card = document.querySelectorAll(".cards-board div div").forEach(
     item => item.addEventListener("click", function()
     { 
