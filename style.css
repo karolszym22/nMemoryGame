@@ -354,9 +354,16 @@
     .results
     {
         
-        font-size: 20px;
+        
+        display: flex;
+        justify-content: space-around;
+       
     }
-
+    #results
+    {
+        font-size: 22px;
+        margin: 0 5px;
+    }
 
 .shadow-box
 {
