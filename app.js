@@ -26,7 +26,7 @@ setting.handleModalSettings();
 class Memory
 
 {
-    constructor()
+    constructor(nick)
     {
         this.clickedPic = "";
         this.firstClickedPic ="";
@@ -34,6 +34,8 @@ class Memory
         this.numberOfHits = 0;
         this.pointsNumber = 9999999;
         this.timer = 0;
+        this.userScored = 0;
+        this.nick = nick;
     }
 
     async timeCounter()
@@ -96,7 +98,8 @@ class Memory
          if(numberHits == 3)
          {
              setting.showModal();
-             score.innerHTML = (this.pointsNumber/(playerOne.trials*this.timer));
+             game.userScored  = (this.pointsNumber/(playerOne.trials*this.timer));
+             score.innerHTML = game.userScored; 
          }
      }
 
@@ -107,6 +110,12 @@ class Memory
 
 const game = new Memory();
 game.timeCounter();
+
+
+
+
+
+
 var card = document.querySelectorAll(".cards-board div div").forEach(
     item => item.addEventListener("click", function()
     { 
