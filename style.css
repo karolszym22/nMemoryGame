@@ -41,6 +41,7 @@
       padding: 0 20px;
       align-items: center;
       justify-content: center;
+      
   }
    .dificulity-level
    {
@@ -106,7 +107,7 @@
         display: flex;
         width: 100%;
         justify-content: space-around;
-        margin-top: 20px;
+        box-sizing: border-box;
     }
     .reset-option
     {
@@ -126,10 +127,12 @@
         width: 100px;
         height: 60px;
         border-radius: 25px;
-        background: linear-gradient(to right, rgb(220, 222, 228) , rgb(163, 163, 155));
+        background: linear-gradient(to right, rgb(230, 151, 33) , rgb(233, 220, 37));
         border: 0;
-        border-bottom: 5px solid rgba(126, 123, 113, 0.842);
-        
+        border-bottom: 5px solid rgba(156, 108, 53, 0.842);
+        margin: 15px 0px;
+        color: white;
+        font-size: 26px;
     }
     .reset-button:hover
     {
