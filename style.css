@@ -342,7 +342,8 @@
     @keyframes modal-drop
     {
       100%{
-          
+        top: 40%;
+      
       }
     }
 

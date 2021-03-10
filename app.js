@@ -70,7 +70,7 @@ class Memory
          if(numberHits == 3)
          {
              setting.showModal();
-           
+             score.innerHTML = playerOne.trials;
          }
      }
 
