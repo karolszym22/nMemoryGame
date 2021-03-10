@@ -197,6 +197,10 @@
             height: 100px;
             width: 70px;
             background-size: 110px;
+         
+        }
+        .shadow-card
+        {
             border: 5px solid rgb(99, 36, 36);
         }
         .main-wrapper
