@@ -22,6 +22,7 @@ class Memory
         this.trials = 0;
         this.numberOfHits = 0;
         this.pointsNumber = 9999999;
+        this.timer = 0;
     }
 
     clickedPicture(value)
@@ -65,6 +66,14 @@ class Memory
         this.lastClickedPic = "";
         
      }
+
+     timeCounter()
+     {
+        do
+        {
+            console.log(setInterval(this.timer++, 3000));
+        }while(this.numberHits!=3);
+    }
 
      finishGame(numberHits)
      {   let score = document.getElementById('results');

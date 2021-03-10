@@ -37,7 +37,8 @@
   {
       width: 85%;
       margin: 10px 0px;
-      border: 10px solid rgba(0, 0, 0, 0.479);
+      border-top: 10px solid rgba(0, 0, 0, 0.479);
+      border-bottom: 10px solid rgba(0, 0, 0, 0.479);
       border-radius: 10px;
       background-color: rgb(117, 43, 114);
       display: flex;
