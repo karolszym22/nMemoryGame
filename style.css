@@ -18,14 +18,12 @@
  .main-wrapper
  {
      width: 800px;
-     height: 600px;
-     border: 3px solid black;
+     border: 15px solid rgba(0, 0, 0, 0.479);
      border-radius: 15px;
      display: flex;
      justify-content: center;
      align-items: center;
-     
-     background-color: rgb(98, 127, 214);
+     background-color: rgb(99, 35, 90);
      color: white;
      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
      
@@ -34,10 +32,10 @@
   .board-game
   {
       width: 85%;
-      height: 90%;
-      border: 3px solid rgb(255, 255, 255);
-      border-radius: 5px;
-      background-color: royalblue;
+      margin: 20px 0px;
+      border: 10px solid rgba(0, 0, 0, 0.479);
+      border-radius: 10px;
+      background-color: rgb(117, 43, 114);
       display: flex;
       box-sizing: border-box;
       padding: 0 20px;
@@ -118,7 +116,7 @@
     {
         margin: 0;
         padding: 5px 10px;
-        border: 5px solid black;
+        border: 5px solid rgba(0, 0, 0, 0.247);
         border-radius: 10px;
         font-size: 26px;
     }
@@ -142,7 +140,7 @@
     {
         height: 190px;
         width: 140px;
-        border: 2px solid black;
+        border: 5px solid rgb(54, 53, 53);
         margin: 10px;
         background-color: white;
         cursor: pointer;
@@ -185,16 +183,17 @@
      {
          height: 100%;
          width: 100%;
-         background-color: rgb(85, 82, 82);
+         background-color: rgb(163, 80, 32);
          display: flex;
          justify-content: center;
          align-items: center;
-         border: 10px solid rgb(99, 36, 36);
+         border: 10px solid orange;
          box-sizing: border-box;
      }
        .shadow-card h1
        {
          font-size: 50px;
+         font-weight: bold;
        }
 
 
