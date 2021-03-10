@@ -420,18 +420,25 @@
          background-color: rgb(255, 166, 0);
 
     }
-    .modal-rank-close
+    .close-modal-rank
     {
-        
+        padding: 5px;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        margin: 0;
     }
-    .modal-rank h2 
+    .close-modal-rank a
     {
-        
+        margin-right: 10px;
+        cursor: pointer;
     }
+   
     .rank-container
     {
         width: 90%;
         height: 85%;
         background-color: rgb(211, 140, 9);
         border-radius: 20px;
+        margin-top: 10px;
     }
