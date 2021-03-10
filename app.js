@@ -21,6 +21,7 @@ class Memory
         this.firstClickedPic ="";
         this.trials = 0;
         this.numberOfHits = 0;
+        this.pointsNumber = 9999999;
     }
 
     clickedPicture(value)
@@ -70,7 +71,7 @@ class Memory
          if(numberHits == 3)
          {
              setting.showModal();
-             score.innerHTML = playerOne.trials;
+             score.innerHTML = (this.pointsNumber/playerOne.trials);
          }
      }
 
