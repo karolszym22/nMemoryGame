@@ -37,7 +37,7 @@ class Memory
     }
     diagnosisId(itemId)
     {
-      var id = itemId.split('');
+      let id = itemId.split('');
       console.log(id[id.length-1]);
       this.clickedPicture(id[id.length-1]);
     }
