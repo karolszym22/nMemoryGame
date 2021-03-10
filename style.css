@@ -312,10 +312,6 @@
                      }
                     }
 
- .table-score       
- {
-     color: orange;
- }
 
 
 
@@ -405,4 +401,37 @@
   .shadow-box.close
     {
         display: none;
+    }
+
+    
+    .modal-rank
+    {
+        width: 400px;
+        height: 500px;
+        border: 2px solid black;
+        border: 4px solid black;
+        border-radius: 20px;
+         z-index: 3;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         font-family: 'Fredoka One', cursive;
+         color: white;
+         background-color: rgb(255, 166, 0);
+
+    }
+    .modal-rank-close
+    {
+        
+    }
+    .modal-rank h2 
+    {
+        
+    }
+    .rank-container
+    {
+        width: 90%;
+        height: 85%;
+        background-color: rgb(211, 140, 9);
+        border-radius: 20px;
     }
