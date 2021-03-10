@@ -1,11 +1,11 @@
-import {player} from "./score"
+import {player} from "./score.js"
 import {pictures} from "./pictures.js"
 import {generatorPictures} from "./generatorPictures.js"
 
 let movePermit = true;
 
 const newGame = new generatorPictures();
-const playerOne = new player("Jan", 0);
+const playerOne = new player(0, "Jan");
 
 
 newGame.generatorCards();
@@ -18,7 +18,7 @@ class Memory
         this.clickedPic = "";
         this.firstClickedPic ="";
         this.trials = 0;
-        
+        this.numberOfHits = 0;
     }
 
     clickedPicture(value)
@@ -39,11 +39,12 @@ class Memory
      {    console.log(firstClickedPic,lastClickedPic);
          if(newGame.cardsLock[firstClickedPic-1] == newGame.cardsLock[lastClickedPic-1])
          {
-             console.log("trafione!");
+            this.numberOfHits++;
          }else
          {
              
-             document.getElementById('trials').innerHTML = playerOne.trialCount();
+             document.getElementById('trials').innerHTML = playerOne.trialsCount();
+             console.log("moj " + playerOne.trials);
              this.coverCard(firstClickedPic, lastClickedPic);
          }
          movePermit = true;

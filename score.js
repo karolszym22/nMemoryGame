@@ -7,7 +7,7 @@ export class player
         
     }
 
-    trialsCount = () => this.trials++;
+    trialsCount = () => ++this.trials;
 
     showScore()
     {
