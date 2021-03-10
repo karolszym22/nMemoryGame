@@ -148,7 +148,7 @@
     .reset-button
     {
         cursor: pointer;
-        width: 100px;
+        width: 150px;
         height: 60px;
         border-radius: 25px;
         background: linear-gradient(to right, rgb(230, 151, 33) , rgb(202, 192, 50));
@@ -160,6 +160,7 @@
         font-family: 'Fredoka One', cursive;
         
     }
+    
     .reset-button:hover
     {
         height: 59px; 
@@ -324,15 +325,27 @@
      display: flex;
      flex-direction: column;
      align-items: center;
-     background-color: orange;
+     background-color: rgba(255, 166, 0, 0.74);
      font-family: 'Fredoka One', cursive;
      color: white;
      
   }    
+    .close-modal
+    {
+        padding: 5px;
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+    .close-modal a
+    {
+        margin-right: 10px;
+        cursor: pointer;
+    }
   .modal h2
   {
     
-    margin: 10px
+    
   }  
     .results
     {
