@@ -453,18 +453,20 @@
     .player
     {
         width: 100%;
+        text-align: center;
     }
     .position
     {
+     flex-shrink: 3;
      
        
     }
-    .score{
-        
-      
+    .result{
+        flex-shrink: 1;
+        text-align: end;
     }
     .nickname
     {
-        
+        flex-shrink: 2;
         
     }
