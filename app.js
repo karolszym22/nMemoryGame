@@ -40,6 +40,7 @@ class Memory
          if(newGame.cardsLock[firstClickedPic-1] == newGame.cardsLock[lastClickedPic-1])
          {
             this.numberOfHits++;
+            
          }else
          {
              
