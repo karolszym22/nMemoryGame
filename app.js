@@ -1,22 +1,15 @@
+import {player} from "./score"
 import {pictures} from "./pictures.js"
 import {generatorPictures} from "./generatorPictures.js"
 
 let movePermit = true;
-const user = new generatorPictures();
 
-user.generatorCards();
-user.addPictures();
-var tab = ["23","23"];
-var ilerazy = 0;
-function tablica()
-{
-    if(tab.includes("23"))
-    {
-       ilerazy++;
-       console.log(ilerazy);
-    }
-}
-tablica();
+const newGame = new generatorPictures();
+const playerOne = new player("Jan", 0);
+
+
+newGame.generatorCards();
+newGame.addPictures();
 class Memory
 
 {
@@ -44,12 +37,13 @@ class Memory
     
      comparisonPictures(firstClickedPic, lastClickedPic)
      {    console.log(firstClickedPic,lastClickedPic);
-         if(user.cardsLock[firstClickedPic-1] == user.cardsLock[lastClickedPic-1])
+         if(newGame.cardsLock[firstClickedPic-1] == newGame.cardsLock[lastClickedPic-1])
          {
              console.log("trafione!");
          }else
          {
-             this.trials++;
+             
+             document.getElementById('trials').innerHTML = playerOne.trialCount();
              this.coverCard(firstClickedPic, lastClickedPic);
          }
          movePermit = true;

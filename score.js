@@ -1,15 +1,22 @@
-class Player
+export class player
 {
-    constructor(trials)
+    constructor(trials, nick)
     {
+        this.nick = nick;
         this.trials = trials;
+        
     }
 
     trialsCount = () => this.trials++;
+
+    showScore()
+    {
+
+    }
     
     sendToLocalStorage(player)
     {
-      const {nick, results} = player;
+        window.localStorage.setItem('player', JSON.stringify(player));
     }
 
         
