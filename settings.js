@@ -15,4 +15,10 @@ export class settings{
            document.querySelector('.shadow-box').classList.toggle("close");
         })
     }
+
+    showModal()
+    {
+        document.querySelector('.modal').classList.toggle("close");
+        document.querySelector('.shadow-box').classList.toggle("close");
+    }
 }

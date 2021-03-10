@@ -42,7 +42,7 @@ class Memory
          if(newGame.cardsLock[firstClickedPic-1] == newGame.cardsLock[lastClickedPic-1])
          {
             this.numberOfHits++;
-            
+            this.finishGame(this.numberOfHits);
          }else
          {
              
@@ -66,10 +66,11 @@ class Memory
      }
 
      finishGame(numberHits)
-     {
+     {   let score = document.getElementById('results');
          if(numberHits == 3)
          {
-             setting.show();
+             setting.showModal();
+           
          }
      }
 

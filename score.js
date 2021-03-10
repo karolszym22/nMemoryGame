@@ -9,10 +9,8 @@ export class player
 
     trialsCount = () => ++this.trials;
 
-    showScore()
-    {
-
-    }
+    showScore = () => this.trials;
+    
     
     sendToLocalStorage(player)
     {
