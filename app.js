@@ -53,7 +53,7 @@ class Memory
     clickedPicture(value)
     {
          let id = value;
-         this.firstClickedPic =  id;
+          this.firstClickedPic =  id;
          console.log("Ostatni naciśnięty przycisk to "+ this.firstClickedPic);
          
     }
@@ -61,7 +61,7 @@ class Memory
     {
       let id = itemId.split('');
       console.log(id[id.length-1]);
-      this.clickedPicture(id[id.length-1]);
+       this.clickedPicture(id[id.length-1]);
     }
     
      comparisonPictures(firstClickedPic, lastClickedPic)
@@ -85,10 +85,10 @@ class Memory
         setTimeout(function(){ 
                 
             document.getElementById("shadow-card"+firstClickedPic).setAttribute("style", "display: inline-flex");
-            document.getElementById("shadow-card"+lastClickedPic).setAttribute("style", "display: inline-flex");
+             document.getElementById("shadow-card"+lastClickedPic).setAttribute("style", "display: inline-flex");
         }, 100);
         this.firstClickedPic = "";
-        this.lastClickedPic = "";
+         this.lastClickedPic = "";
         
      }
 
@@ -97,9 +97,13 @@ class Memory
      {   let score = document.getElementById('results');
          if(numberHits == 3)
          {
-             setting.showModal();
-             game.userScored  = (this.pointsNumber/(playerOne.trials*this.timer));
+             game.userScored  = (this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer)));
+             console.log(this.pointsNumber);
+             console.log(playerOne.trials);
+             console.log(this.timer );
              score.innerHTML = game.userScored; 
+             setting.showModal();
+             
          }
      }
 
