@@ -108,10 +108,11 @@
         width: 100%;
         justify-content: space-around;
         box-sizing: border-box;
+        height: 90px;
     }
     .reset-option
     {
-
+        box-sizing: border-box;
     }
     .reset-option p
     {
@@ -137,7 +138,7 @@
     .reset-button:hover
     {
         height: 59px; 
-        width: 98px;
+        font-size: 25px;
     }
     .card
     {
