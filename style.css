@@ -122,6 +122,22 @@
         border-radius: 10px;
         font-size: 26px;
     }
+    .reset-button
+    {
+        cursor: pointer;
+        width: 100px;
+        height: 60px;
+        border-radius: 25px;
+        background: linear-gradient(to right, rgb(220, 222, 228) , rgb(163, 163, 155));
+        border: 0;
+        border-bottom: 5px solid rgba(126, 123, 113, 0.842);
+        
+    }
+    .reset-button:hover
+    {
+        height: 59px; 
+        width: 98px;
+    }
     .card
     {
         height: 190px;
