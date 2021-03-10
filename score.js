@@ -1,4 +1,4 @@
-class Score 
+class Player
 {
     constructor(trials)
     {
@@ -7,9 +7,9 @@ class Score
 
     trialsCount = () => this.trials++;
     
-    sendToLocalStorage(results)
+    sendToLocalStorage(player)
     {
-
+      const {nick, results} = player;
     }
 
         
