@@ -15,14 +15,7 @@ function timer() {
 
 
 
-let movePermit = true;
-const newGame = new generatorPictures();
-const playerOne = new player(0, "Jan");
-const setting = new settings();
 
-newGame.generatorCards();
-newGame.addPictures();
-setting.handleModalSettings();
 class Memory
 
 {
@@ -49,7 +42,13 @@ class Memory
         }while(this.numberOfHits!=3);
         
     }
-
+    startGame()
+    {
+        if(sessionStorage.length>0)
+        {
+            this.timeCounter();
+        }
+    }
     clickedPicture(value)
     {
          let id = value;
@@ -97,8 +96,8 @@ class Memory
      {   let score = document.getElementById('results');
          if(numberHits == 3)
          {
-             game.userScored  = (this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer)));
-             score.innerHTML = game.userScored; 
+             playGame.userScored  = (this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer)));
+             score.innerHTML = playGame.userScored; 
              setting.showModal();
              
          }
@@ -109,8 +108,7 @@ class Memory
 
 
 
-const game = new Memory();
-game.timeCounter();
+
 
 
 
@@ -123,7 +121,7 @@ var card = document.querySelectorAll(".cards-board div div").forEach(
       if(movePermit == true)
       {
               
-        if(game.firstClickedPic!="")
+        if(playGame.firstClickedPic!="")
         {   movePermit = false;
             console.log("drugi przycisk to:"+item.id);
             var choosedCard = document.getElementById(item.id);
@@ -133,8 +131,8 @@ var card = document.querySelectorAll(".cards-board div div").forEach(
                 choosedCard.setAttribute("style", "display: none");
                 var last = item.id.split('');
                 console.log(last[last.length-1]);
-                game.comparisonPictures(game.firstClickedPic, last[last.length-1]);
-                game.firstClickedPic = "";
+                playGame.comparisonPictures(playGame.firstClickedPic, last[last.length-1]);
+                playGame.firstClickedPic = "";
             }, 500);
          
        
@@ -143,7 +141,7 @@ var card = document.querySelectorAll(".cards-board div div").forEach(
         {
            
             var choosedCard = document.getElementById(item.id);
-            game.diagnosisId(item.id);
+            playGame.diagnosisId(item.id);
             choosedCard.setAttribute("style", "animation: rotate 1s forwards;");
             setTimeout(function(){ 
                 
@@ -158,3 +156,12 @@ var card = document.querySelectorAll(".cards-board div div").forEach(
 )
 
 
+let movePermit = true;
+const newGame = new generatorPictures();
+const playerOne = new player(0, "Jan");
+const setting = new settings();
+const playGame = new Memory();
+newGame.generatorCards();
+newGame.addPictures();
+setting.handleModalSettings();
+playGame.startGame();

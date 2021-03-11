@@ -37,20 +37,17 @@ export class settings{
            console.log("moje value:" + value.length);
            if(value.length>8)
            {
-               setAtt;
+            document.getElementById('nickLength').innerHTML = "max number of letters: 8!";
            }else
            {
-               console.log("udało się!");
+            sessionStorage.setItem(value,value);
+            document.querySelector('.modal-nick').classList.toggle("close");
+            document.querySelector('.shadow-box').classList.toggle("close");
            }
              
     }
 
-    setAttention()
-    {
-        let nickLength = document.getElementById('nickLength');
-        nickLength.innerHTML = "max number of letters: 8!";
-        console.log("set");
-    }
+   
 
     showModal()
     {

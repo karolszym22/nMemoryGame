@@ -16,7 +16,19 @@ export class player
     {
         window.localStorage.setItem('player', JSON.stringify(player));
     }
+  
+    createNewPosition()
+    {
+        let container = document.createElement('div');
+        let position = document.createElement('p');
+        let nickname = document.createElement('p');
+        let result = document.createElement('p');
+        this.createElementsClass(container,position,nickname,result);
+    }
+    createElementsClass(container,position,nickname,result)
+    {
 
-        
+
+    }    
     
 }
