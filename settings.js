@@ -4,7 +4,7 @@ export class settings{
         this.closeModalBttn = document.getElementById('closeModal');
         this.closeModaRanklBttn = document.getElementById('close-modal-rank');
         this.scoreTableBttn = document.getElementById('scoreButton');
-        
+        this.lestPlayBtnn = document.getElementById('letsPlay');
         
     }
     
@@ -25,8 +25,21 @@ export class settings{
         {
             document.querySelector('.modal-rank').classList.toggle("close");
             document.querySelector('.modal').classList.toggle("close");
-        }
-        )
+        })
+        this.lestPlayBtnn.addEventListener('click', function()
+        {
+            document.querySelector('.shadow-box').classList.toggle("close");
+            document.querySelector('.modal-nick').classList.toggle("close");
+        })
+        
+    }
+        
+    checkNicknameLength()
+    {
+        this.lestPlayBtnn.addEventListener('click', function()
+        {
+            
+        })
     }
 
     showModal()
