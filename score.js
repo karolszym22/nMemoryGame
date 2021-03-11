@@ -19,16 +19,37 @@ export class player
   
     createNewPosition()
     {
-        let container = document.createElement('div');
         let position = document.createElement('p');
         let nickname = document.createElement('p');
         let result = document.createElement('p');
-        this.createElementsClass(container,position,nickname,result);
+        let container = document.createElement('div');
+        
+        this.createElementsClass(position,nickname,result,container);
     }
-    createElementsClass(container,position,nickname,result)
+    createElementsClass(...theArgs)
     {
+       console.log(theArgs);
+       let container = theArgs.pop();
+       container.classList.add("player-container");
+       theArgs.forEach(arr =>
+        {
+            arr.classList.add("player", "position");
 
-
+        });
+        theArgs.push(container);
+        this.addPlayerData(theArgs);
     }    
-    
+    addPlayerData(theArgs)
+    { 
+      for(let i=0; i<sessionStorage.length-1; i++)
+      {
+          for(let j=1; j<sessionStorage.length-1; j++)
+          {
+            
+          }
+      }  
+    }
 }
+
+let play = new player();
+play.createNewPosition();

@@ -2,13 +2,12 @@ import {player} from "./score.js"
 import {pictures} from "./pictures.js"
 import {generatorPictures} from "./generatorPictures.js"
 import {settings} from "./settings.js"
-
-
+window.onload = localStorage.clear();
 function timer() {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve('1');
-        console.log("34343");
+        
       }, 1000);
     });
   }
@@ -19,7 +18,7 @@ function timer() {
 class Memory
 
 {
-    constructor(nick)
+    constructor()
     {
         this.clickedPic = "";
         this.firstClickedPic ="";
@@ -28,7 +27,7 @@ class Memory
         this.pointsNumber = 9999999;
         this.timer = 0;
         this.userScored = 0;
-        this.nick = nick;
+        this.nick = "";
     }
 
     async timeCounter()
@@ -37,18 +36,11 @@ class Memory
         do{
             const result = await timer();
             this.timer+=parseInt(result);
-            console.log(this.timer + "timer");
             time.innerHTML = this.timer;
         }while(this.numberOfHits!=3);
         
     }
-    startGame()
-    {
-        if(sessionStorage.length>0)
-        {
-            this.timeCounter();
-        }
-    }
+   
     clickedPicture(value)
     {
          let id = value;
@@ -99,7 +91,36 @@ class Memory
              playGame.userScored  = (this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer)));
              score.innerHTML = playGame.userScored; 
              setting.showModal();
+             sessionStorage.setItem(sessionStorage.length, JSON.stringify(playGame));
              
+         }
+     }
+     checkNicknameLength()
+     {       
+           
+           let value = document.getElementById('nickValue').value;
+           console.log("moje value:" + value.length);
+           if(value.length>8)
+           {
+            document.getElementById('nickLength').innerHTML = "max number of letters: 8!";
+           }else
+           {
+            localStorage.setItem("name", value);
+            console.log("powinna się odpalic");
+            document.querySelector('.modal-nick').classList.toggle("close");
+            document.querySelector('.shadow-box').classList.toggle("close");
+           }
+             
+     }
+     startGame()
+     {    
+         console.log("wykonywana jest funkcja startująca");
+         if(localStorage.length>0)
+         {
+             this.timeCounter();
+    
+             this.nick = localStorage.name;
+            
          }
      }
 
@@ -163,5 +184,33 @@ const setting = new settings();
 const playGame = new Memory();
 newGame.generatorCards();
 newGame.addPictures();
-setting.handleModalSettings();
-playGame.startGame();
+
+
+
+let closeModalBttn = document.getElementById('closeModal');
+let closeModaRanklBttn = document.getElementById('close-modal-rank');
+let scoreTableBttn = document.getElementById('scoreButton');
+let lestPlayBtnn = document.getElementById('letsPlay');
+
+
+
+closeModalBttn.addEventListener('click', function()
+{
+   document.querySelector('.modal').classList.toggle("close");
+   document.querySelector('.shadow-box').classList.toggle("close");
+})
+closeModaRanklBttn.addEventListener('click', function()
+{
+   document.querySelector('.modal-rank').classList.toggle("close");
+   document.querySelector('.shadow-box').classList.toggle("close");
+})
+scoreTableBttn.addEventListener('click', function()
+{
+    document.querySelector('.modal-rank').classList.toggle("close");
+    document.querySelector('.modal').classList.toggle("close");
+})
+lestPlayBtnn.addEventListener('click', () =>
+{
+    playGame.checkNicknameLength();
+    playGame.startGame();
+})
