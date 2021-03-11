@@ -98,9 +98,6 @@ class Memory
          if(numberHits == 3)
          {
              game.userScored  = (this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer)));
-             console.log(this.pointsNumber);
-             console.log(playerOne.trials);
-             console.log(this.timer );
              score.innerHTML = game.userScored; 
              setting.showModal();
              
