@@ -4,8 +4,11 @@ export class player
     {
         this.nick = nick;
         this.trials = trials;
-        
+        this.scoreContainer = [];
+        this.scoreContainerSort = [];
     }
+
+    
 
     trialsCount = () => ++this.trials;
 
@@ -28,25 +31,36 @@ export class player
     }
     createElementsClass(...theArgs)
     {
-       console.log(theArgs);
+       let classTable = ["position", "nickname", "result"];
        let container = theArgs.pop();
        container.classList.add("player-container");
-       theArgs.forEach(arr =>
+       theArgs.forEach((item,index) =>
         {
-            arr.classList.add("player", "position");
-
+            item.classList.add("player", classTable[index]);
+            
         });
         theArgs.push(container);
         this.addPlayerData(theArgs);
     }    
+
     addPlayerData(theArgs)
-    {  let scoreTable = [];
+    {  
+        console.log("tutaj jestem");
       for(let i=0; i<sessionStorage.length-1; i++)
       {
-        scoreTable[i] = sessionStorage[i+2];
+        this.scoreContainer.push(JSON.parse(sessionStorage[i+1]));
+        this.scoreContainerSort.push(this.scoreContainer[i].userScored);
+        
       }  
-      console.log(scoreTable[0]);
-    }
+      this.scoreContainerSort.sort();
+      let elementsTable = theArgs;
+      for(let i=0; i<this.scoreContainerSort.length; i++)
+      {
+        
+      }
+
+     }
+
 }
 
 let play = new player();
