@@ -534,16 +534,31 @@
     font-family: 'Fredoka One', cursive;
     margin: 0px 10px;
 }
+.attention
+{
+    margin: 5px 0px;
+    height: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+  .attention p
+  {
+   margin-right: 15px;
+   font-size: 13px;
+   
+  }
 .lets-play
 {
     display: flex;
     justify-content: center;
     height: 80px;
+    margin: 0;
     
 }
 .reset-button.play
 {
     width: 40%;
+    margin: 0;
    
 }
 .modal-nick.close

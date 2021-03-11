@@ -10,6 +10,7 @@ export class settings{
     
     handleModalSettings()
     {
+      
         
         this.closeModalBttn.addEventListener('click', function()
         {
@@ -26,20 +27,29 @@ export class settings{
             document.querySelector('.modal-rank').classList.toggle("close");
             document.querySelector('.modal').classList.toggle("close");
         })
-        this.lestPlayBtnn.addEventListener('click', function()
-        {
-            document.querySelector('.shadow-box').classList.toggle("close");
-            document.querySelector('.modal-nick').classList.toggle("close");
-        })
+        this.lestPlayBtnn.addEventListener('click', this.checkNicknameLength, false)
         
     }
         
-    checkNicknameLength()
+    checkNicknameLength(setAtt)
+    {       
+           let value = document.getElementById('nickValue').value;
+           console.log("moje value:" + value.length);
+           if(value.length>8)
+           {
+               setAtt;
+           }else
+           {
+               console.log("udało się!");
+           }
+             
+    }
+
+    setAttention()
     {
-        this.lestPlayBtnn.addEventListener('click', function()
-        {
-            
-        })
+        let nickLength = document.getElementById('nickLength');
+        nickLength.innerHTML = "max number of letters: 8!";
+        console.log("set");
     }
 
     showModal()
