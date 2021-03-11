@@ -40,14 +40,12 @@ export class player
         this.addPlayerData(theArgs);
     }    
     addPlayerData(theArgs)
-    { 
+    {  let scoreTable = [];
       for(let i=0; i<sessionStorage.length-1; i++)
       {
-          for(let j=1; j<sessionStorage.length-1; j++)
-          {
-            
-          }
+        scoreTable[i] = sessionStorage[i+2];
       }  
+      console.log(scoreTable[0]);
     }
 }
 
