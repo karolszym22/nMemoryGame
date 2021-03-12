@@ -20,65 +20,66 @@ export class player
         window.localStorage.setItem('player', JSON.stringify(player));
     }
   
-    createNewPosition()
+    createNewPosition(scoreNumber)
     {
+        let elements = [];
         let position = document.createElement('p');
         let nickname = document.createElement('p');
         let result = document.createElement('p');
         let container = document.createElement('div');
-        
-        this.createElementsClass(position,nickname,result,container);
+        elements.push(position,nickname,result,container);
+        this.createElementsClass(elements,scoreNumber)
     }
-    createElementsClass(...theArgs)
-    {
+    createElementsClass(elements,scoreNumber)
+     {
        let classTable = ["position", "nickname", "result"];
-       let container = theArgs.pop();
+       let container = elements.pop();
        container.classList.add("player-container");
-       theArgs.forEach((item,index) =>
+       elements.forEach((item,index) =>
         {
             item.classList.add("player", classTable[index]);
             
         });
-        theArgs.push(container);
-        this.addPlayerData(theArgs);
-    }    
+       elements.push(container);
+       this.editElements(elements,scoreNumber);
+     } 
+     editElements(elements,scoreNumber)
+     { 
+       elements[0].innerHTML = scoreNumber+1;
+       elements[1].innerHTML = this.scoreContainer[scoreNumber].nick;
+       elements[2].innerHTML = this.scoreContainer[scoreNumber].userScored;
+       this.appendElements(elements);
 
-    addPlayerData(theArgs)
+     }   
+     appendElements(elements,scoreNumber)
+     {
+       for(let i=0; i<elements.length-1; i++)
+       {
+         elements[3].appendChild(elements[i]);
+       }
+       console.log("czy to div"+elements[3]);
+       document.querySelector(".rank-container").appendChild(elements[3]);
+     }
+
+    addPlayerData()
     {  
-       
+       console.log("teraz tooooooooooooooooooooo");
       for(let i=0; i<sessionStorage.length-1; i++)
       {
         this.scoreContainer.push(JSON.parse(sessionStorage[i+1]));
       }  
-      
-      let elementsTable = theArgs;
       this.scoreContainer.sort(function(a, b) {
         return (b.userScored) - (a.userScored);
        });
-       console.log(this.scoreContainer); 
+      
+      console.log(this.scoreContainer)
+     
       for(let i=0; i<this.scoreContainer.length; i++)
       {
-        this.putInScoreContainer(elementsTable, this.scoreContainer[i],i);
+        this.createNewPosition(i)
       }
-      console.log(this.scoreContainer)
      }
-     putInScoreContainer(element, scoreContainer,position)
-     {
-       let elementsTable = element;
-       elementsTable[0].innerHTML = position + 1;
-       console.log(elementsTable[0]);
-       elementsTable[1].innerHTML = scoreContainer.nick;
-       console.log(elementsTable[1]);
-       elementsTable[2].innerHTML = scoreContainer.userScored;
-       console.log(elementsTable[2]);
-       for(let i=0; i<elementsTable.length-1; i++)
-       {
-         elementsTable[3].appendChild(elementsTable[i]);
-        
-       }
-         document.querySelector('.rank-container').appendChild(elementsTable[3]);
-     }
-    
+     
 
 }
 

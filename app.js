@@ -59,8 +59,7 @@ class Memory
      comparisonPictures(firstClickedPic, lastClickedPic)
      {    console.log(firstClickedPic,lastClickedPic);
          if(newGame.cardsLock[firstClickedPic-1] == newGame.cardsLock[lastClickedPic-1])
-         {
-            this.numberOfHits++;
+         {  this.numberOfHits++;
             this.finishGame(this.numberOfHits);
          }else
          {
@@ -89,10 +88,10 @@ class Memory
      {   let score = document.getElementById('results');
          if(numberHits == 3)
          {
-             playGame.userScored  = (this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer)));
+             playGame.userScored  = Math.trunc((this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer))));
              score.innerHTML = playGame.userScored; 
              sessionStorage.setItem(sessionStorage.length, JSON.stringify(playGame));
-             playerOne.createNewPosition();
+             playerOne.addPlayerData();
              setting.showModal();
              
              
