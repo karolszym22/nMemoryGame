@@ -45,20 +45,24 @@ export class player
 
     addPlayerData(theArgs)
     {  
-        console.log("tutaj jestem");
+       
       for(let i=0; i<sessionStorage.length-1; i++)
       {
         this.scoreContainer.push(JSON.parse(sessionStorage[i+1]));
-        this.scoreContainerSort.push(this.scoreContainer[i].userScored);
-        
+        this.scoreContainerSort.push([this.scoreContainer[i].userScored, this.scoreContainer[i].nick]);
       }  
       this.scoreContainerSort.sort();
       let elementsTable = theArgs;
       for(let i=0; i<this.scoreContainerSort.length; i++)
       {
-        
+        let elementsTable = theArgs;
+        this.putInScoreContainer(elementsTable, this.scoreContainerSort[i]);
       }
-
+          console.log(this.scoreContainerSort);
+     }
+     putInScoreContainer(elementsTable, scoreContainer)
+     {
+        
      }
 
 }
