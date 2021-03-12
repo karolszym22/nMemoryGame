@@ -49,23 +49,38 @@ export class player
       for(let i=0; i<sessionStorage.length-1; i++)
       {
         this.scoreContainer.push(JSON.parse(sessionStorage[i+1]));
-        this.scoreContainerSort.push([this.scoreContainer[i].userScored, this.scoreContainer[i].nick]);
       }  
-      this.scoreContainerSort.sort();
+      
       let elementsTable = theArgs;
-      for(let i=0; i<this.scoreContainerSort.length; i++)
+      this.scoreContainer.sort(function(a, b) {
+        return (b.userScored) - (a.userScored);
+       });
+       console.log(this.scoreContainer); 
+      for(let i=0; i<this.scoreContainer.length; i++)
       {
-        let elementsTable = theArgs;
-        this.putInScoreContainer(elementsTable, this.scoreContainerSort[i]);
+        this.putInScoreContainer(elementsTable, this.scoreContainer[i],i);
       }
-          console.log(this.scoreContainerSort);
+      console.log(this.scoreContainer)
      }
-     putInScoreContainer(elementsTable, scoreContainer)
+     putInScoreContainer(element, scoreContainer,position)
      {
+       let elementsTable = element;
+       elementsTable[0].innerHTML = position + 1;
+       console.log(elementsTable[0]);
+       elementsTable[1].innerHTML = scoreContainer.nick;
+       console.log(elementsTable[1]);
+       elementsTable[2].innerHTML = scoreContainer.userScored;
+       console.log(elementsTable[2]);
+       for(let i=0; i<elementsTable.length-1; i++)
+       {
+         elementsTable[3].appendChild(elementsTable[i]);
         
+       }
+         document.querySelector('.rank-container').appendChild(elementsTable[3]);
      }
+    
 
 }
 
 let play = new player();
-play.createNewPosition();
+

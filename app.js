@@ -20,14 +20,15 @@ class Memory
 {
     constructor()
     {
+        this.userScored = 0;
+        this.nick = "";
         this.clickedPic = "";
         this.firstClickedPic ="";
         this.trials = 0;
         this.numberOfHits = 0;
         this.pointsNumber = 9999999;
         this.timer = 0;
-        this.userScored = 0;
-        this.nick = "";
+        
     }
 
     async timeCounter()
@@ -90,8 +91,10 @@ class Memory
          {
              playGame.userScored  = (this.pointsNumber/ (playerOne.trials ==0 ? this.timer : (playerOne.trials*this.timer)));
              score.innerHTML = playGame.userScored; 
-             setting.showModal();
              sessionStorage.setItem(sessionStorage.length, JSON.stringify(playGame));
+             playerOne.createNewPosition();
+             setting.showModal();
+             
              
          }
      }
