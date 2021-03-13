@@ -261,44 +261,28 @@
             background-size: 170px;
         }
        }
-       @media (max-width: 425px) {
-        .card
-        {
-            height: 130px;
-            width: 100px;
-            background-size: 140px;
-        }
-       }
-       @media (max-width: 384px) {
+       @media (max-width: 442px) {
         .card
         {
             height: 100px;
             width: 70px;
-            background-size: 110px;
-         
+            background-size: 140px;
         }
         .shadow-card
         {
             border: 5px solid rgb(99, 36, 36);
         }
-        .main-wrapper
-         {
-          
-          height: 500px;
-         }
-        }
-        @media (max-width: 307px) {
+        
+       }
+    
+        @media (max-width: 342px) {
             .card
             {
                 height: 85px;
                 width: 55px;
                 background-size: 95px;
             }
-            .main-wrapper
-             {
-              
-              height: 460px;
-             }
+            
             }
             @media (max-width: 267px) {
                 .card
@@ -307,11 +291,7 @@
                     width: 45px;
                     background-size: 85px;
                 }
-                .main-wrapper
-                 {
-                  
-                  height: 430px;
-                 }
+                
                 }
                 @media (max-width: 239px) {
                     .card
@@ -320,11 +300,8 @@
                         width: 45px;
                         background-size: 85px;
                     }
-                    .main-wrapper
-                     {
-                      
-                      height: 700px;
-                     }
+                   
+
                     }
 
 
