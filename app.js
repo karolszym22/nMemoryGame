@@ -93,7 +93,7 @@ class Memory
              sessionStorage.setItem(sessionStorage.length, JSON.stringify(playGame));
              playerOne.addPlayerData();
              setting.showModal();
-             
+             document.getElementById('reset-game').style.display="block";
              
          }
      }
@@ -193,7 +193,7 @@ let closeModalBttn = document.getElementById('closeModal');
 let closeModaRanklBttn = document.getElementById('close-modal-rank');
 let scoreTableBttn = document.getElementById('scoreButton');
 let lestPlayBtnn = document.getElementById('letsPlay');
-
+let resetGame = document .getElementById('reset-game');
 
 
 closeModalBttn.addEventListener('click', function()
@@ -215,4 +215,8 @@ lestPlayBtnn.addEventListener('click', () =>
 {
     playGame.checkNicknameLength();
     playGame.startGame();
+})
+resetGame.addEventListener('click', () =>
+{
+  setting.resetGame();
 })

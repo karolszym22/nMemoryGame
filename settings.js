@@ -6,4 +6,8 @@ export class settings{
         document.querySelector('.modal').classList.toggle("close");
         document.querySelector('.shadow-box').classList.toggle("close");
     }
+    resetGame()
+    {
+        window.location.reload();
+    }
 }

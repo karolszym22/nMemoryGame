@@ -181,6 +181,26 @@
         height: 59px; 
         font-size: 21px;
     }
+    .reset-game
+    {
+       cursor: pointer;
+        width: 150px;
+        height: 60px;
+        border-radius: 25px;
+        background: linear-gradient(to right, rgb(230, 151, 33) , rgb(202, 192, 50));
+        border: 0;
+        border-bottom: 5px solid rgba(156, 108, 53, 0.842);
+        margin: 15px 0px;
+        color: white;
+        font-size: 22px;
+        font-family: 'Fredoka One', cursive; 
+        display: none;
+    }
+    .reset-game:hover
+    {
+        height: 59px; 
+        font-size: 21px;
+    }
     .card
     {
         height: 190px;
@@ -243,67 +263,7 @@
 
 
 
-       @keyframes rotate
-       {
-        100%{
-            transform: rotate3d(1,2,2, 180deg);
-            width: 0%;
-            height: 0%;
-          }
-
-       }
-    
-       @media (max-width: 714px) {
-        .card
-        {
-            height: 150px;
-            width: 110px;
-            background-size: 170px;
-        }
-       }
-       @media (max-width: 442px) {
-        .card
-        {
-            height: 100px;
-            width: 70px;
-            background-size: 140px;
-        }
-        .shadow-card
-        {
-            border: 5px solid rgb(99, 36, 36);
-        }
-        
-       }
-    
-        @media (max-width: 342px) {
-            .card
-            {
-                height: 85px;
-                width: 55px;
-                background-size: 95px;
-            }
-            
-            }
-            @media (max-width: 267px) {
-                .card
-                {
-                    height: 75px;
-                    width: 45px;
-                    background-size: 85px;
-                }
-                
-                }
-                @media (max-width: 239px) {
-                    .card
-                    {
-                        height: 75px;
-                        width: 45px;
-                        background-size: 85px;
-                    }
-                   
-
-                    }
-
+       
 
 
 
@@ -543,3 +503,90 @@
 {
     display: none;
 }
+
+
+
+
+
+
+
+
+@keyframes rotate
+       {
+        100%{
+            transform: rotate3d(1,2,2, 180deg);
+            width: 0%;
+            height: 0%;
+          }
+
+       }
+    
+       @media (max-width: 714px) {
+        .card
+        {
+            height: 150px;
+            width: 110px;
+            background-size: 170px;
+        }
+       }
+       @media (max-width: 442px) {
+        .card
+        {
+            height: 100px;
+            width: 70px;
+            background-size: 140px;
+        }
+        .shadow-card
+        {
+            border: 5px solid rgb(99, 36, 36);
+        }
+        .modal
+        {
+            width: 250px;
+            font-size: 14px;
+        }
+        .modal-nick
+        {
+            width: 250px;
+            font-size: 14px;
+        }
+        .modal-nick h1
+        {
+            font-size: 22px;
+        }
+
+        .modal
+        {
+            width: 250px;
+        }
+        
+       }
+    
+        @media (max-width: 342px) {
+            .card
+            {
+                height: 85px;
+                width: 55px;
+                background-size: 95px;
+            }
+            
+            }
+            @media (max-width: 267px) {
+                .card
+                {
+                    height: 75px;
+                    width: 45px;
+                    background-size: 85px;
+                }
+                
+                }
+                @media (max-width: 239px) {
+                    .card
+                    {
+                        height: 75px;
+                        width: 45px;
+                        background-size: 85px;
+                    }
+                   
+
+                    }
