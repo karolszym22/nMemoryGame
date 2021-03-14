@@ -3,6 +3,7 @@ import {pictures} from "./pictures.js"
 import {generatorPictures} from "./generatorPictures.js"
 import {settings} from "./settings.js"
 window.onload = localStorage.clear();
+
 function timer() {
     return new Promise(resolve => {
       setTimeout(() => {
@@ -105,7 +106,11 @@ class Memory
            if(value.length>8)
            {
             document.getElementById('nickLength').innerHTML = "max number of letters: 8!";
-           }else
+           }else if(value.length===0)
+           {
+            document.getElementById('nickLength').innerHTML = "give me your nickname mr nobody!";
+           }
+           else
            {
             localStorage.setItem("name", value);
             console.log("powinna się odpalic");
