@@ -67,7 +67,7 @@ export class player
        console.log("moj scoreContainer jest teraz pusty" + this.scoreContainer);
       for(let i=0; i<sessionStorage.length-1; i++)
       {
-        this.scoreContainer.push(JSON.parse(sessionStorage[i+1]));
+        this.scoreContainer.push(JSON.parse(sessionStorage[i]));
         console.log("dodajemy do scoreContainer tyle ile jest w sessions torage"+this.scoreContainer);
       }  
       this.scoreContainer.sort(function(a, b) {
